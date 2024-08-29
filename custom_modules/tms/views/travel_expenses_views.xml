@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_travel_expenses_tree" model="ir.ui.view">
+        <field name="name">tms.travel.expenses.tree</field>
+        <field name="model">tms.travel.expenses</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="amount" />
+                <field name="expense_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_travel_expenses_form" model="ir.ui.view">
+        <field name="name">tms.travel.expenses.form</field>
+        <field name="model">tms.travel.expenses</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_draft" type="object" string="Set to Draft"
+                        states="approved, rejected" class="oe_highlight" />
+                    <button name="action_approved" type="object" string="Approve" states="draft"
+                        class="oe_highlight" />
+                    <button name="action_rejected" type="object" string="Reject" states="draft"
+                        class="oe_highlight" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="amount" />
+                        <field name="expense_date" />
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

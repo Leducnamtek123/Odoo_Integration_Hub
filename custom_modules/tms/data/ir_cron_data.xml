@@ -1,0 +1,10 @@
+<odoo>
+    <record id="tms_driver_cash_advance_cron" model="ir.cron">
+        <field name="name">Driver Cash Advance Reminder</field>
+        <field name="model_id" ref="model_tms_driver_cash_advance" />
+        <field name="state">code</field>
+        <field name="code">model._cron_driver_cash_advance_reminder()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+    </record>
+</odoo>

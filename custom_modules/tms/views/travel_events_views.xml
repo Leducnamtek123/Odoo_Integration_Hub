@@ -1,0 +1,32 @@
+<odoo>
+    <record id="view_travel_events_tree" model="ir.ui.view">
+        <field name="name">tms.travel.events.tree</field>
+        <field name="model">tms.travel.events</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="event_date" />
+                <field name="truck_id" />
+                <field name="event_type" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_travel_events_form" model="ir.ui.view">
+        <field name="name">tms.travel.events.form</field>
+        <field name="model">tms.travel.events</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="event_date" />
+                        <field name="truck_id" />
+                        <field name="event_type" />
+                        <field name="notes" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

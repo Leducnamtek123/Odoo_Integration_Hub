@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_truck_odometer_tree" model="ir.ui.view">
+        <field name="name">tms.truck.odometer.tree</field>
+        <field name="model">tms.truck.odometer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="truck_id" />
+                <field name="odo_reading" />
+                <field name="reading_date" />
+                <field name="notes" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_truck_odometer_form" model="ir.ui.view">
+        <field name="name">tms.truck.odometer.form</field>
+        <field name="model">tms.truck.odometer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="truck_id" />
+                        <field name="odo_reading" />
+                        <field name="reading_date" />
+                        <field name="notes" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

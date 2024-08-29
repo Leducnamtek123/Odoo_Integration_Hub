@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Menu Items -->
+    <menuitem id="tms_root_menu" name="Transportation Management System" sequence="1"
+        groups="hr.group_hr_manager"
+    />
+
+    <menuitem id="tms_driver_menu" name="Driver Management" parent="tms_root_menu" sequence="1"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_fuel_menu" name="Fuel Vouchers" parent="tms_root_menu" sequence="2"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_expenses_menu" name="Travel Expenses" parent="tms_root_menu" sequence="3"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_invoicing_menu" name="Freight Invoicing" parent="tms_root_menu" sequence="4"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_red_tapes_menu" name="Truck Red Tapes" parent="tms_root_menu" sequence="5"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_odometer_menu" name="Odometer Readings" parent="tms_root_menu" sequence="6"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_events_menu" name="Travel Events" parent="tms_root_menu" sequence="7"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_kits_menu" name="Kits Management" parent="tms_root_menu" sequence="8"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_places_menu" name="Places" parent="tms_root_menu" sequence="9"
+        groups="hr.group_hr_manager"
+    />
+    <menuitem id="tms_routes_menu" name="Routes" parent="tms_root_menu" sequence="10"
+        groups="hr.group_hr_manager"
+    />
+
+    <!-- Actions -->
+    <act_window id="action_driver_management" name="Drivers" res_model="tms.driver"
+        view_mode="tree,form" menu_id="tms_driver_menu" />
+    <act_window id="action_fuel_vouchers" name="Fuel Vouchers" res_model="tms.fuel.voucher"
+        view_mode="tree,form" menu_id="tms_fuel_menu" />
+    <act_window id="action_travel_expenses" name="Travel Expenses" res_model="tms.travel.expense"
+        view_mode="tree,form" menu_id="tms_expenses_menu" />
+    <act_window id="action_freight_invoicing" name="Freight Invoicing"
+        res_model="tms.freight.invoicing" view_mode="tree,form" menu_id="tms_invoicing_menu" />
+    <act_window id="action_truck_red_tapes" name="Truck Red Tapes" res_model="tms.truck.red.tapes"
+        view_mode="tree,form" menu_id="tms_red_tapes_menu" />
+    <act_window id="action_truck_odometer" name="Odometer Readings" res_model="tms.truck.odometer"
+        view_mode="tree,form" menu_id="tms_odometer_menu" />
+    <act_window id="action_travel_events" name="Travel Events" res_model="tms.travel.events"
+        view_mode="tree,form" menu_id="tms_events_menu" />
+    <act_window id="action_kits_management" name="Kits Management" res_model="tms.kits"
+        view_mode="tree,form" menu_id="tms_kits_menu" />
+    <act_window id="action_places" name="Places" res_model="tms.places" view_mode="tree,form"
+        menu_id="tms_places_menu" />
+    <act_window id="action_routes" name="Routes" res_model="tms.routes" view_mode="tree,form"
+        menu_id="tms_routes_menu" />
+</odoo>

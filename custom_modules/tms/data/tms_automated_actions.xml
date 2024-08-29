@@ -1,0 +1,16 @@
+<odoo>
+    <record id="action_send_driver_notification" model="base.automation">
+        <field name="name">Send Driver Notification</field>
+        <field name="model_id" ref="model_tms_driver" />
+        <field name="state">code</field>
+        <field name="code">
+            if record.active:
+            template_id = env.ref('your_module_name.email_template_driver_notification').id
+            env['mail.template'].browse(template_id).send_mail(record.id, force_send=True)
+        </field>
+        <field name="trigger">on_create</field>
+        <field name="filter_domain">[('active', '=', True)]</field>
+    </record>
+
+    <!-- Add more automated actions as needed -->
+</odoo>

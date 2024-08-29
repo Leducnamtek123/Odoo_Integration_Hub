@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_driver_cash_advance_tree" model="ir.ui.view">
+        <field name="name">tms.driver.cash.advance.tree</field>
+        <field name="model">tms.driver.cash.advance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="amount" />
+                <field name="payment_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_driver_cash_advance_form" model="ir.ui.view">
+        <field name="name">tms.driver.cash.advance.form</field>
+        <field name="model">tms.driver.cash.advance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_draft" type="object" string="Set to Draft"
+                        states="paid, cancel" class="oe_highlight" />
+                    <button name="action_paid" type="object" string="Mark as Paid" states="draft"
+                        class="oe_highlight" />
+                    <button name="action_cancel" type="object" string="Cancel" states="draft, paid"
+                        class="oe_highlight" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="amount" />
+                        <field name="payment_date" />
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_freight_invoicing_tree" model="ir.ui.view">
+        <field name="name">tms.freight.invoicing.tree</field>
+        <field name="model">tms.freight.invoicing</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="amount" />
+                <field name="invoice_date" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_freight_invoicing_form" model="ir.ui.view">
+        <field name="name">tms.freight.invoicing.form</field>
+        <field name="model">tms.freight.invoicing</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_draft" type="object" string="Set to Draft"
+                        states="paid, cancelled" class="oe_highlight" />
+                    <button name="action_paid" type="object" string="Mark as Paid" states="draft"
+                        class="oe_highlight" />
+                    <button name="action_cancelled" type="object" string="Cancel"
+                        states="draft, paid" class="oe_highlight" />
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="amount" />
+                        <field name="invoice_date" />
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

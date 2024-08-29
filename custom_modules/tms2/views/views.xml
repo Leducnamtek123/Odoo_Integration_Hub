@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="tms2.list">
+      <field name="name">tms2 list</field>
+      <field name="model">tms2.tms2</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="tms2.action_window">
+      <field name="name">tms2 window</field>
+      <field name="res_model">tms2.tms2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tms2.action_server">
+      <field name="name">tms2 server</field>
+      <field name="model_id" ref="model_tms2_tms2"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="tms2" id="tms2.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="tms2.menu_1" parent="tms2.menu_root"/>
+    <menuitem name="Menu 2" id="tms2.menu_2" parent="tms2.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="tms2.menu_1_list" parent="tms2.menu_1"
+              action="tms2.action_window"/>
+    <menuitem name="Server to list" id="tms2" parent="tms2.menu_2"
+              action="tms2.action_server"/>
+-->
+  </data>
+</odoo>

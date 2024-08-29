@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_routes_tree" model="ir.ui.view">
+        <field name="name">tms.routes.tree</field>
+        <field name="model">tms.routes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="start_place_id" />
+                <field name="end_place_id" />
+                <field name="distance" />
+                <field name="estimated_time" />
+                <field name="google_maps_url" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_routes_form" model="ir.ui.view">
+        <field name="name">tms.routes.form</field>
+        <field name="model">tms.routes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="start_place_id" />
+                        <field name="end_place_id" />
+                        <field name="distance" />
+                        <field name="estimated_time" />
+                        <field name="google_maps_url" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

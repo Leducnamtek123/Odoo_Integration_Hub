@@ -1,0 +1,21 @@
+<odoo>
+    <!-- Define the report for Drivers -->
+    <report id="report_tms_driver"
+        model="tms.driver"
+        string="Driver Report"
+        report_type="qweb-pdf"
+        name="your_module_name.report_tms_driver"
+        file="your_module_name.report_tms_driver"
+        attachment_use="False" />
+
+    <!-- Define the report for Fuel Vouchers -->
+    <report id="report_tms_fuel_voucher"
+        model="tms.fuel.voucher"
+        string="Fuel Voucher Report"
+        report_type="qweb-pdf"
+        name="your_module_name.report_tms_fuel_voucher"
+        file="your_module_name.report_tms_fuel_voucher"
+        attachment_use="False" />
+
+    <!-- Repeat for other models: Travel Expenses, Freight Invoicing, etc. -->
+</odoo>
