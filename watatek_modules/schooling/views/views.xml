@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    
+
+    <record model="ir.ui.view" id="schooling.list">
+      <field name="name">schooling list</field>
+      <field name="model">schooling.schooling</field>
+      <field name="arch" type="xml">
+        <tree string = 'schooling'>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+    
+
+    <record model="ir.ui.view" id="schooling.kanban">
+      <field name="name">schooling kanban</field>
+      <field name="model">schooling.schooling</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <div>
+                <h4><field name="name"/></h4>
+                <p><field name="value"/></p>
+                <p><field name="value2"/></p>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+    
+
+    <record model="ir.actions.act_window" id="schooling.action_window">
+      <field name="name">schooling window</field>
+      <field name="res_model">schooling.schooling</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+    
+
+    <record model="ir.actions.server" id="schooling.action_server">
+      <field name="name">schooling server</field>
+      <field name="model_id" ref="model_schooling_schooling"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form,kanban",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    
+
+    <menuitem name="schooling" id="schooling.menu_root"/>
+
+    
+
+    <menuitem name="Menu 1" id="schooling.menu_1" parent="schooling.menu_root"/>
+    <menuitem name="Menu 2" id="schooling.menu_2" parent="schooling.menu_root"/>
+
+    actions
+
+    <menuitem name="List" id="schooling.menu_1_list" parent="schooling.menu_1"
+              action="schooling.action_window"/>
+    <menuitem name="Server to list" id="schooling" parent="schooling.menu_2"
+              action="schooling.action_server"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,72 @@
+/* File: static/src/scss/misa_api_action.scss */
+
+/* Style for Kanban View */
+/* File: static/src/scss/misa_api_action.scss */
+
+/* Style for Kanban View */
+.o_kanban_view .oe_kanban_global_click {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    padding: 10px; /* Thêm padding để tạo khoảng cách cho các phần tử bên trong */
+}
+
+.o_kanban_view .oe_kanban_global_click:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.o_kanban_view .oe_kanban_global_click .row {
+    margin-bottom: 0;
+}
+
+.o_kanban_view .oe_kanban_global_click .col-8 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.o_kanban_view .oe_kanban_global_click .col-4 {
+    text-align: right;
+}
+
+.o_kanban_view .oe_kanban_global_click .badge {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.o_kanban_view .oe_kanban_global_click .badge.rounded-pill {
+    border-radius: 50px;
+}
+
+/* Style for List View */
+.o_list_view {
+    margin-top: 20px;
+}
+
+.o_list_view .o_list_row {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.o_list_view .o_list_row:hover {
+    background-color: #f9f9f9;
+}
+
+.o_list_view .o_list_row td {
+    padding: 10px;
+}
+
+.o_list_view .o_list_row td.field_name_api {
+    font-weight: bold;
+}
+
+.o_list_view .o_list_row td.field_client_id,
+.o_list_view .o_list_row td.field_client_secret {
+    color: #555;
+}

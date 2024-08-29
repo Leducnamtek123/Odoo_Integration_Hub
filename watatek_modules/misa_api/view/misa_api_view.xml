@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Định nghĩa quyền truy cập cho nhóm người dùng -->
+    <record id="model_misa_api_action_access_admin" model="ir.model.access">
+        <field name="name">misa.api.action access admin</field>
+        <field name="model_id" ref="model_misa_api_action" />
+        <field name="group_id" ref="base.group_system" /> <!-- Admin Group -->
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="model_misa_api_action_access_user" model="ir.model.access">
+        <field name="name">misa.api.action access user</field>
+        <field name="model_id" ref="model_misa_api_action" />
+        <field name="group_id" ref="base.group_user" /> <!-- User Group -->
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <!-- Define Tree View for MISA API Action -->
+    <record id="view_misa_api_action_list" model="ir.ui.view">
+        <field name="name">misa.api.action.list</field>
+        <field name="model">misa.api.action</field>
+        <field name="arch" type="xml">
+            <tree string="Misa API">
+                <field name="name_api" />
+                <field name="client_id" />
+                <field name="client_secret" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_misa_api_action_kanban" model="ir.ui.view">
+        <field name="name">misa.api.action.kanban</field>
+        <field name="model">misa.api.action</field>
+        <field name="arch" type="xml">
+            <kanban string="Misa API">
+                <field name="name_api" />
+                <field name="client_id" />
+                <field name="client_secret" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="kanban-content">
+                                <div class="kanban-header">
+                                    <strong class="name-api">
+                                        <t t-esc="record.name_api.value" />
+                                    </strong>
+                                </div>
+                                <div class="kanban-footer">
+                                    <div class="client-id">
+                                        <strong>Client Secret: </strong>
+                                        <t t-esc="record.client_id.value" />
+                                    </div>
+                                    <div class="client-secret">
+                                        <strong>Client Secret: </strong>
+                                        <t t-esc="record.client_secret.value" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="action_misa_api_action" model="ir.actions.act_window">
+        <field name="name">MISA API Action</field>
+        <field name="res_model">misa.api.action</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo mới cấu hình MISA API.
+            </p>
+        </field>
+    </record>
+
+    <!-- Tạo menu trên thanh công cụ -->
+    <menuitem id="menu_misa_api_action" name="MISA API"
+        sequence="10" action="action_misa_api_action"
+        groups="base.group_system,base.group_user"
+    />
+</odoo>
